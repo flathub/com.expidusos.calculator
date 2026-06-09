@@ -1,0 +1,37 @@
+From b0e086461cd8b32a30e49cb43432bfc37653ed2a Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Tue, 9 Jun 2026 12:46:53 +0300
+Subject: [PATCH] Fix appdata paper cuts
+
+- Fix wrong category
+- Fix the circular-component-relation error
+
+Signed-off-by: Sabri Ünal <yakushabb@gmail.com>
+---
+ com.expidusos.calculator.metainfo.xml | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/com.expidusos.calculator.metainfo.xml b/com.expidusos.calculator.metainfo.xml
+index 7d8bd49..0eccae8 100644
+--- a/com.expidusos.calculator.metainfo.xml
++++ b/com.expidusos.calculator.metainfo.xml
+@@ -30,7 +30,7 @@
+ 
+   <categories>
+     <category>System</category>
+-    <category>Utilities</category>
++    <category>Utility</category>
+   </categories>
+ 
+   <releases>
+@@ -120,7 +120,4 @@
+   </description>
+   
+   <launchable type="desktop-id">com.expidusos.calculator.desktop</launchable>
+-  <provides>
+-    <id>com.expidusos.calculator</id>
+-  </provides>
+ </component>
+--
+libgit2 1.7.2
+
