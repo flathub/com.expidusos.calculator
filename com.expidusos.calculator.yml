@@ -1,6 +1,6 @@
 app-id: com.expidusos.calculator
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 command: calculator
@@ -15,16 +15,17 @@ modules:
     buildsystem: simple
     build-commands:
       - cp -R bundle /app/expidus_calculator
-      - mkdir -p /app/bin && ln -s /app/expidus_calculator/calculator /app/bin/calculator
+      - mkdir -p /app/bin
+      - ln -s /app/expidus_calculator/calculator /app/bin/calculator
       - chmod +x /app/bin/calculator
-      - install -D /app/expidus_calculator/data/com.expidusos.calculator.desktop /app/share/applications/com.expidusos.calculator.desktop
-      - install -D /app/expidus_calculator/data/com.expidusos.calculator.png /app/share/icons/hicolor/256x256/apps/com.expidusos.calculator.png
-      - install -D com.expidusos.calculator.metainfo.xml /app/share/metainfo/com.expidusos.calculator.metainfo.xml
+      - install -D /app/expidus_calculator/data/${FLATPAK_ID}.desktop -t /app/share/applications/
+      - install -D /app/expidus_calculator/data/${FLATPAK_ID}.png -t  /app/share/icons/hicolor/256x256/apps/
+      - install -D ${FLATPAK_ID}.metainfo.xml -t  /app/share/metainfo/
     sources:
       - type: archive
         only-arches:
           - x86_64
-        url: https://github.com/ExpidusOS/calculator/releases/download/0.1.1-alpha/com.expidusos.calculator-linux-x64.tar.gz 
+        url: https://github.com/ExpidusOS/calculator/releases/download/0.1.1-alpha/com.expidusos.calculator-linux-x64.tar.gz
         sha256: 45197b602cdb0073e5190dadcf6c6f6b0232886c144091d2fdcfc1c792af1349
         dest: bundle
       - type: file
