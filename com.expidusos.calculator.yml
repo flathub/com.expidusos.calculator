@@ -31,3 +31,5 @@ modules:
       - type: file
         url: https://github.com/ExpidusOS/calculator/raw/13c73cbb61e928f43a6b3885e11bdced141d7031/data/com.expidusos.calculator.metainfo.xml
         sha256: e28fedc451b26e5635dce12d336d55f619614f4493a8ba2f4b1239b78c06919f
+      - type: patch
+        path: fix-appdata.patch
